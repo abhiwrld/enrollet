@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300" fill="none">
+  <!-- Form Background -->
+  <rect x="50" y="30" width="300" height="240" rx="10" fill="white" stroke="#E5E7EB" stroke-width="2"/>
+  
+  <!-- Form Header -->
+  <rect x="70" y="50" width="260" height="30" rx="5" fill="#F3F4F6"/>
+  <circle cx="85" cy="65" r="8" fill="#2563EB"/>
+  <rect x="100" y="60" width="100" height="10" rx="2" fill="#9CA3AF"/>
+  
+  <!-- Form Fields -->
+  <rect x="70" y="100" width="260" height="20" rx="4" fill="#F3F4F6"/>
+  <rect x="70" y="130" width="260" height="20" rx="4" fill="#F3F4F6"/>
+  <rect x="70" y="160" width="260" height="20" rx="4" fill="#F3F4F6"/>
+  
+  <!-- University Icons -->
+  <rect x="70" y="200" width="50" height="50" rx="25" fill="#8C1515"/>
+  <text x="95" y="230" font-family="Arial" font-size="12" fill="white" text-anchor="middle">S</text>
+  
+  <rect x="140" y="200" width="50" height="50" rx="25" fill="#A31F34"/>
+  <text x="165" y="230" font-family="Arial" font-size="12" fill="white" text-anchor="middle">M</text>
+  
+  <rect x="210" y="200" width="50" height="50" rx="25" fill="#A41034"/>
+  <text x="235" y="230" font-family="Arial" font-size="12" fill="white" text-anchor="middle">H</text>
+  
+  <rect x="280" y="200" width="50" height="50" rx="25" fill="#2563EB"/>
+  <text x="305" y="230" font-family="Arial" font-size="12" fill="white" text-anchor="middle">+</text>
+  
+  <!-- Arrows -->
+  <path d="M95 180L95 195" stroke="#2563EB" stroke-width="2" stroke-linecap="round"/>
+  <path d="M165 180L165 195" stroke="#2563EB" stroke-width="2" stroke-linecap="round"/>
+  <path d="M235 180L235 195" stroke="#2563EB" stroke-width="2" stroke-linecap="round"/>
+  <path d="M305 180L305 195" stroke="#2563EB" stroke-width="2" stroke-linecap="round"/>
+</svg> 
