@@ -278,3 +278,66 @@ body {
     z-index: 10;
   }
 }
+
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 0;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .search-input {
+    padding: 14px 20px 14px 48px;
+    font-size: 1rem;
+  }
+  
+  .search-icon {
+    left: 16px;
+  }
+  
+  .filter-container {
+    max-width: 100%;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 8px;
+    justify-content: flex-start;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+  
+  .filter-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+  
+  .filter-tag {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  
+  .how-it-works-steps {
+    padding: 0 20px;
+  }
+  
+  .step-card {
+    margin-bottom: 40px;
+    max-width: 100%;
+  }
+  
+  .step-card::before {
+    top: -16px;
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+}
+
+/* Responsive utility classes */
+.mobile-px-4 {
+  @apply px-4 md:px-0;
+}
+
+.mobile-container {
+  @apply w-full px-4 md:container md:mx-auto md:px-4;
+}

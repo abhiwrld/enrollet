@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import MobileMenu from "./components/MobileMenu";
 
 export default function Home() {
   return (
@@ -13,27 +14,30 @@ export default function Home() {
               <span className="text-xl font-bold">enrollet</span>
             </div>
             <div className="hidden md:flex items-center gap-8">
-              <Link href="#search" className="text-sm font-medium hover:text-primary">Search Colleges</Link>
-              <Link href="#features" className="text-sm font-medium hover:text-primary">Features</Link>
-              <Link href="#how-it-works" className="text-sm font-medium hover:text-primary">How It Works</Link>
-              <Link href="#faq" className="text-sm font-medium hover:text-primary">FAQ</Link>
+              <Link href="#search" className="text-sm font-medium hover:text-primary transition duration-200">Search Colleges</Link>
+              <Link href="#features" className="text-sm font-medium hover:text-primary transition duration-200">Features</Link>
+              <Link href="#how-it-works" className="text-sm font-medium hover:text-primary transition duration-200">How It Works</Link>
+              <Link href="#faq" className="text-sm font-medium hover:text-primary transition duration-200">FAQ</Link>
             </div>
             <div className="flex items-center gap-4">
-              <Link href="#get-started" className="primary-button">Get Started</Link>
+              <div className="block md:hidden">
+                <MobileMenu />
+              </div>
+              <Link href="#get-started" className="hidden md:block primary-button">Get Started</Link>
             </div>
           </div>
         </div>
       </header>
 
       <main>
-        {/* Hero Section - Original Design */}
-        <section className="gradient-bg py-16 md:py-24">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-4xl mx-auto mb-16">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0a1033] mb-6 leading-tight">
+        {/* Hero Section */}
+        <section className="gradient-bg py-12 md:py-24">
+          <div className="mobile-container">
+            <div className="text-center max-w-4xl mx-auto mb-12 md:mb-16">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#0a1033] mb-4 md:mb-6 leading-tight">
                 Apply to multiple universities with ease
               </h1>
-              <p className="text-lg md:text-xl text-[#4b5563] mb-8 mx-auto max-w-2xl">
+              <p className="text-base md:text-xl text-[#4b5563] mb-6 md:mb-8 mx-auto max-w-2xl">
                 Use one single form to apply to several universities at once.
               </p>
               <Link href="#get-started" className="primary-button">
@@ -42,7 +46,7 @@ export default function Home() {
             </div>
 
             {/* Dashboard Preview */}
-            <div className="card p-4 rounded-2xl max-w-5xl mx-auto">
+            <div className="card p-2 md:p-4 rounded-xl md:rounded-2xl max-w-5xl mx-auto overflow-hidden">
               <div className="flex flex-col lg:flex-row">
                 {/* Sidebar */}
                 <div className="w-full lg:w-64 border-b lg:border-b-0 lg:border-r border-gray-100 p-4">
@@ -164,14 +168,14 @@ export default function Home() {
         </section>
 
         {/* College Search Section */}
-        <section id="search" className="section teal-bg">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="search" className="section teal-bg py-12 md:py-20">
+          <div className="mobile-container">
             <div className="flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto">
               <div className="mb-8 md:mb-0 md:max-w-lg">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                <h2 className="text-2xl md:text-4xl font-bold mb-4 md:mb-6 text-center md:text-left">
                   Explore more than 1,000 colleges on Enrollet
                 </h2>
-                <p className="text-lg mb-6">
+                <p className="text-base md:text-lg mb-6 text-center md:text-left">
                   Find the perfect universities for you based on your preferences and requirements.
                 </p>
                 <div className="hidden md:block">
@@ -200,7 +204,7 @@ export default function Home() {
                 </div>
 
                 <div className="mt-6">
-                  <p className="text-sm mb-3">Search by filter (optional)</p>
+                  <p className="text-sm mb-3 text-center md:text-left">Search by filter (optional)</p>
                   <div className="filter-container">
                     <div className="filter-tag">Government</div>
                     <div className="filter-tag">Private</div>
@@ -305,10 +309,10 @@ export default function Home() {
 
         {/* How It Works Section */}
         <section className="how-it-works">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">How Enrollet Works</h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
+          <div className="mobile-container">
+            <div className="text-center mb-8 md:mb-12">
+              <h2 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4">How Enrollet Works</h2>
+              <p className="text-gray-600 max-w-2xl mx-auto text-sm md:text-base">
                 Our streamlined process makes applying to multiple universities simple and stress-free.
               </p>
             </div>
@@ -319,12 +323,12 @@ export default function Home() {
                   <Image 
                     src="/telescope-icon.svg" 
                     alt="Search & Explore" 
-                    width={64} 
-                    height={64} 
-                    className="mx-auto mb-6"
+                    width={56} 
+                    height={56} 
+                    className="mx-auto mb-4 md:mb-6"
                   />
-                  <h3 className="text-xl font-semibold mb-3">Explore Universities</h3>
-                  <p className="text-gray-600">
+                  <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">Explore Universities</h3>
+                  <p className="text-gray-600 text-sm md:text-base">
                     Browse our database of 1,000+ universities and use advanced filters to find schools that match your preferences.
                   </p>
                 </div>
@@ -341,12 +345,12 @@ export default function Home() {
                   <Image 
                     src="/feature-unified.svg" 
                     alt="Complete Form" 
-                    width={64} 
-                    height={64} 
-                    className="mx-auto mb-6"
+                    width={56} 
+                    height={56} 
+                    className="mx-auto mb-4 md:mb-6"
                   />
-                  <h3 className="text-xl font-semibold mb-3">Complete One Form</h3>
-                  <p className="text-gray-600">
+                  <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">Complete One Form</h3>
+                  <p className="text-gray-600 text-sm md:text-base">
                     Fill out our comprehensive application once, and we&apos;ll intelligently format it for each university&apos;s specific requirements.
                   </p>
                 </div>
@@ -363,12 +367,12 @@ export default function Home() {
                   <Image 
                     src="/feature-tracking.svg" 
                     alt="Track Applications" 
-                    width={64} 
-                    height={64} 
-                    className="mx-auto mb-6"
+                    width={56} 
+                    height={56} 
+                    className="mx-auto mb-4 md:mb-6"
                   />
-                  <h3 className="text-xl font-semibold mb-3">Submit & Track</h3>
-                  <p className="text-gray-600">
+                  <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">Submit & Track</h3>
+                  <p className="text-gray-600 text-sm md:text-base">
                     Submit your applications and track their progress in real-time. Receive notifications for important updates and deadlines.
                   </p>
                 </div>
@@ -378,54 +382,54 @@ export default function Home() {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
+        <section className="py-12 md:py-20 bg-white">
+          <div className="mobile-container">
+            <div className="text-center mb-8 md:mb-12">
+              <h2 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4">Frequently Asked Questions</h2>
+              <p className="text-gray-600 max-w-2xl mx-auto text-sm md:text-base">
                 Find answers to common questions about Enrollet and the university application process.
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold mb-3">What is Enrollet?</h3>
-                <p className="text-gray-600">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 max-w-6xl mx-auto">
+              <div className="bg-gray-50 p-4 md:p-6 rounded-lg shadow-sm">
+                <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">What is Enrollet?</h3>
+                <p className="text-gray-600 text-sm md:text-base">
                   Enrollet is a comprehensive platform that simplifies the university application process by allowing students to complete one application that can be submitted to multiple universities.
                 </p>
               </div>
               
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold mb-3">How much does Enrollet cost?</h3>
-                <p className="text-gray-600">
+              <div className="bg-gray-50 p-4 md:p-6 rounded-lg shadow-sm">
+                <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">How much does Enrollet cost?</h3>
+                <p className="text-gray-600 text-sm md:text-base">
                   Enrollet offers a free basic plan that includes applications to up to 3 universities. Premium plans are available for students who wish to apply to more schools or access additional features.
                 </p>
               </div>
               
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold mb-3">Which universities accept Enrollet applications?</h3>
-                <p className="text-gray-600">
+              <div className="bg-gray-50 p-4 md:p-6 rounded-lg shadow-sm">
+                <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">Which universities accept Enrollet applications?</h3>
+                <p className="text-gray-600 text-sm md:text-base">
                   Enrollet works with over 1,000 universities across India and internationally. You can check if your preferred universities accept our application by using the search feature on our platform.
                 </p>
               </div>
               
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold mb-3">Can I track my application status?</h3>
-                <p className="text-gray-600">
+              <div className="bg-gray-50 p-4 md:p-6 rounded-lg shadow-sm">
+                <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">Can I track my application status?</h3>
+                <p className="text-gray-600 text-sm md:text-base">
                   Yes, Enrollet provides real-time tracking for all your applications. You&apos;ll receive notifications about important updates, deadlines, and admission decisions.
                 </p>
               </div>
               
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold mb-3">Is my information secure?</h3>
-                <p className="text-gray-600">
+              <div className="bg-gray-50 p-4 md:p-6 rounded-lg shadow-sm">
+                <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">Is my information secure?</h3>
+                <p className="text-gray-600 text-sm md:text-base">
                   Absolutely. Enrollet uses enterprise-grade encryption to protect your personal data. We never share your information without your explicit consent.
                 </p>
               </div>
               
-              <div className="bg-gray-50 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold mb-3">Do you offer guidance on university selection?</h3>
-                <p className="text-gray-600">
+              <div className="bg-gray-50 p-4 md:p-6 rounded-lg shadow-sm">
+                <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">Do you offer guidance on university selection?</h3>
+                <p className="text-gray-600 text-sm md:text-base">
                   Yes, Enrollet provides personalized university recommendations based on your academic profile, preferences, and career goals. Our advanced matching algorithm helps you find schools where you&apos;re likely to thrive.
                 </p>
               </div>
@@ -434,14 +438,14 @@ export default function Home() {
         </section>
 
         {/* CTA Section */}
-        <section id="get-started" className="section gradient-bg">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to simplify your college applications?</h2>
-            <p className="text-lg md:text-xl text-[#4b5563] mb-8 max-w-2xl mx-auto">
+        <section id="get-started" className="section gradient-bg py-12 md:py-20">
+          <div className="mobile-container text-center">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6">Ready to simplify your college applications?</h2>
+            <p className="text-base md:text-lg text-[#4b5563] mb-6 md:mb-8 max-w-2xl mx-auto">
               Join thousands of students who are saving time and reducing stress with Enrollet
             </p>
             
-            <Link href="#" className="primary-button text-lg py-3 px-8">
+            <Link href="#" className="primary-button text-base md:text-lg py-3 px-6 md:px-8">
               Get Started Today
             </Link>
           </div>
@@ -449,48 +453,48 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-white border-t border-gray-100 py-12">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
+      <footer className="bg-white border-t border-gray-100 py-8 md:py-12">
+        <div className="mobile-container">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="col-span-2 md:col-span-1">
               <div className="flex items-center gap-2 mb-4">
-                <Image src="/enrollet-logo.svg" alt="Enrollet Logo" width={32} height={32} />
-                <span className="text-xl font-bold">enrollet</span>
+                <Image src="/enrollet-logo.svg" alt="Enrollet Logo" width={28} height={28} />
+                <span className="text-lg font-bold">enrollet</span>
               </div>
-              <p className="text-sm text-gray-500 mb-4">
+              <p className="text-xs md:text-sm text-gray-500 mb-4">
                 Simplifying college applications for students worldwide.
               </p>
-              <p className="text-sm text-gray-500">
+              <p className="text-xs md:text-sm text-gray-500">
                 © {new Date().getFullYear()} Enrollet. All rights reserved.
               </p>
             </div>
 
             <div>
-              <h3 className="font-semibold mb-4">Product</h3>
+              <h3 className="font-semibold mb-3 md:mb-4 text-sm md:text-base">Product</h3>
               <ul className="space-y-2">
-                <li><Link href="#features" className="text-sm footer-link">Features</Link></li>
-                <li><Link href="#how-it-works" className="text-sm footer-link">How It Works</Link></li>
-                <li><Link href="#" className="text-sm footer-link">Pricing</Link></li>
-                <li><Link href="#search" className="text-sm footer-link">College Search</Link></li>
+                <li><Link href="#features" className="text-xs md:text-sm footer-link">Features</Link></li>
+                <li><Link href="#how-it-works" className="text-xs md:text-sm footer-link">How It Works</Link></li>
+                <li><Link href="#" className="text-xs md:text-sm footer-link">Pricing</Link></li>
+                <li><Link href="#search" className="text-xs md:text-sm footer-link">College Search</Link></li>
               </ul>
             </div>
 
             <div>
-              <h3 className="font-semibold mb-4">Company</h3>
+              <h3 className="font-semibold mb-3 md:mb-4 text-sm md:text-base">Company</h3>
               <ul className="space-y-2">
-                <li><Link href="#" className="text-sm footer-link">About</Link></li>
-                <li><Link href="#" className="text-sm footer-link">Blog</Link></li>
-                <li><Link href="#" className="text-sm footer-link">Careers</Link></li>
-                <li><Link href="#" className="text-sm footer-link">Contact</Link></li>
+                <li><Link href="#" className="text-xs md:text-sm footer-link">About</Link></li>
+                <li><Link href="#" className="text-xs md:text-sm footer-link">Blog</Link></li>
+                <li><Link href="#" className="text-xs md:text-sm footer-link">Careers</Link></li>
+                <li><Link href="#" className="text-xs md:text-sm footer-link">Contact</Link></li>
               </ul>
             </div>
 
             <div>
-              <h3 className="font-semibold mb-4">Legal</h3>
+              <h3 className="font-semibold mb-3 md:mb-4 text-sm md:text-base">Legal</h3>
               <ul className="space-y-2">
-                <li><Link href="#" className="text-sm footer-link">Privacy Policy</Link></li>
-                <li><Link href="#" className="text-sm footer-link">Terms of Service</Link></li>
-                <li><Link href="#" className="text-sm footer-link">Cookie Policy</Link></li>
+                <li><Link href="#" className="text-xs md:text-sm footer-link">Privacy Policy</Link></li>
+                <li><Link href="#" className="text-xs md:text-sm footer-link">Terms of Service</Link></li>
+                <li><Link href="#" className="text-xs md:text-sm footer-link">Cookie Policy</Link></li>
               </ul>
             </div>
           </div>
