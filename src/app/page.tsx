@@ -347,7 +347,7 @@ export default function Home() {
                   />
                   <h3 className="text-xl font-semibold mb-3">Complete One Form</h3>
                   <p className="text-gray-600">
-                    Fill out our comprehensive application once, and we'll intelligently format it for each university's specific requirements.
+                    Fill out our comprehensive application once, and we&apos;ll intelligently format it for each university&apos;s specific requirements.
                   </p>
                 </div>
               </div>
@@ -412,7 +412,7 @@ export default function Home() {
               <div className="bg-gray-50 p-6 rounded-lg">
                 <h3 className="text-xl font-semibold mb-3">Can I track my application status?</h3>
                 <p className="text-gray-600">
-                  Yes, Enrollet provides real-time tracking for all your applications. You'll receive notifications about important updates, deadlines, and admission decisions.
+                  Yes, Enrollet provides real-time tracking for all your applications. You&apos;ll receive notifications about important updates, deadlines, and admission decisions.
                 </p>
               </div>
               
@@ -426,7 +426,7 @@ export default function Home() {
               <div className="bg-gray-50 p-6 rounded-lg">
                 <h3 className="text-xl font-semibold mb-3">Do you offer guidance on university selection?</h3>
                 <p className="text-gray-600">
-                  Yes, Enrollet provides personalized university recommendations based on your academic profile, preferences, and career goals. Our advanced matching algorithm helps you find schools where you're likely to thrive.
+                  Yes, Enrollet provides personalized university recommendations based on your academic profile, preferences, and career goals. Our advanced matching algorithm helps you find schools where you&apos;re likely to thrive.
                 </p>
               </div>
             </div>
