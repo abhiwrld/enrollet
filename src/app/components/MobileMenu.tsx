@@ -3,11 +3,33 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 
-const MobileMenu = () => {
+type AuthMode = 'login' | 'signup' | 'signup-details';
+
+interface MobileMenuProps {
+  onOpenAuth?: (mode: AuthMode) => void;
+  isLoggedIn?: boolean;
+  onLogout?: () => void;
+}
+
+const MobileMenu: React.FC<MobileMenuProps> = ({ 
+  onOpenAuth = () => {}, 
+  isLoggedIn = false,
+  onLogout = () => {}
+}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleAuthClick = (mode: AuthMode) => {
+    setIsOpen(false);
+    onOpenAuth(mode);
+  };
+
+  const handleLogout = () => {
+    setIsOpen(false);
+    onLogout();
   };
 
   return (
@@ -30,13 +52,45 @@ const MobileMenu = () => {
       </button>
       
       {isOpen && (
-        <div className="mobile-menu-overlay md:hidden mt-4 py-4 border-t border-gray-100 transition-all duration-300">
-          <div className="flex flex-col space-y-4">
+        <div className="mobile-menu-overlay md:hidden mt-4 py-4 border-t border-gray-100 transition-all duration-300 absolute right-0 left-0 bg-white z-50">
+          <div className="flex flex-col space-y-4 px-4">
             <Link href="#search" className="text-sm font-medium hover:text-primary py-2">Search Colleges</Link>
             <Link href="#features" className="text-sm font-medium hover:text-primary py-2">Features</Link>
             <Link href="#how-it-works" className="text-sm font-medium hover:text-primary py-2">How It Works</Link>
             <Link href="#faq" className="text-sm font-medium hover:text-primary py-2">FAQ</Link>
-            <Link href="#get-started" className="primary-button text-center mt-2">Get Started</Link>
+            
+            {isLoggedIn ? (
+              <>
+                <Link 
+                  href="/dashboard" 
+                  className="text-sm font-medium hover:text-primary py-2"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Dashboard
+                </Link>
+                <button
+                  onClick={handleLogout}
+                  className="text-sm font-medium hover:text-primary py-2 text-left"
+                >
+                  Log out
+                </button>
+              </>
+            ) : (
+              <>
+                <button
+                  onClick={() => handleAuthClick('login')}
+                  className="text-sm font-medium hover:text-primary py-2 text-left"
+                >
+                  Sign In
+                </button>
+                <button
+                  onClick={() => handleAuthClick('signup')}
+                  className="primary-button text-center mt-2"
+                >
+                  Create an Account
+                </button>
+              </>
+            )}
           </div>
         </div>
       )}

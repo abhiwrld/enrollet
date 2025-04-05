@@ -1,33 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
-import MobileMenu from "./components/MobileMenu";
+import Header from "./components/Header";
+import ApplicationFormPreview from "./components/ApplicationFormPreview";
+import GetStartedButton from "./components/GetStartedButton";
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Header/Navigation */}
-      <header className="py-4 px-4 sm:px-6 lg:px-8 border-b border-gray-100">
-        <div className="container mx-auto">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <Image src="/enrollet-logo.svg" alt="Enrollet Logo" width={32} height={32} />
-              <span className="text-xl font-bold">enrollet</span>
-            </div>
-            <div className="hidden md:flex items-center gap-8">
-              <Link href="#search" className="text-sm font-medium hover:text-primary transition duration-200">Search Colleges</Link>
-              <Link href="#features" className="text-sm font-medium hover:text-primary transition duration-200">Features</Link>
-              <Link href="#how-it-works" className="text-sm font-medium hover:text-primary transition duration-200">How It Works</Link>
-              <Link href="#faq" className="text-sm font-medium hover:text-primary transition duration-200">FAQ</Link>
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="block md:hidden">
-                <MobileMenu />
-              </div>
-              <Link href="#get-started" className="hidden md:block primary-button">Get Started</Link>
-            </div>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       <main>
         {/* Hero Section */}
@@ -40,9 +21,7 @@ export default function Home() {
               <p className="text-base md:text-xl text-[#4b5563] mb-6 md:mb-8 mx-auto max-w-2xl">
                 Use one single form to apply to several universities at once.
               </p>
-              <Link href="#get-started" className="primary-button">
-                Get Started
-              </Link>
+              <GetStartedButton />
             </div>
 
             {/* Dashboard Preview */}
@@ -136,31 +115,9 @@ export default function Home() {
                 </div>
 
                 {/* Application Form Preview */}
-                <div className="w-full lg:w-64 border-t lg:border-t-0 lg:border-l border-gray-100 p-4">
-                  <div className="mb-6">
-                    <h3 className="text-lg font-medium mb-4">Application Form</h3>
-                    <div className="space-y-4">
-                      <div className="h-6 bg-gray-200 rounded-md w-full"></div>
-                      <div className="h-6 bg-gray-200 rounded-md w-full"></div>
-                      <div className="h-6 bg-gray-200 rounded-md w-full"></div>
-                    </div>
-                    <div className="mt-6">
-                      <button className="w-full bg-blue-600 text-white py-2 rounded-md font-medium">
-                        Continue
-                      </button>
-                    </div>
-                  </div>
-
-                  <div>
-                    <h3 className="text-lg font-medium mb-4">Application Form</h3>
-                    <div className="space-y-4">
-                      <div className="h-6 bg-gray-200 rounded-md w-full"></div>
-                      <div className="h-6 bg-gray-200 rounded-md w-full"></div>
-                      <div className="h-6 bg-gray-200 rounded-md w-full"></div>
-                      <div className="h-6 bg-gray-200 rounded-md w-full"></div>
-                      <div className="h-12 bg-gray-200 rounded-md w-full"></div>
-                    </div>
-                  </div>
+                <div className="w-full lg:w-64 border-t lg:border-t-0 lg:border-l border-gray-100">
+                  <ApplicationFormPreview formType="personal" />
+                  <ApplicationFormPreview formType="documents" />
                 </div>
               </div>
             </div>
@@ -437,7 +394,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* CTA Section */}
+        {/* Get Started CTA section at the bottom of the page */}
         <section id="get-started" className="section gradient-bg py-12 md:py-20">
           <div className="mobile-container text-center">
             <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6">Ready to simplify your college applications?</h2>
@@ -445,9 +402,7 @@ export default function Home() {
               Join thousands of students who are saving time and reducing stress with Enrollet
             </p>
             
-            <Link href="#" className="primary-button text-base md:text-lg py-3 px-6 md:px-8">
-              Get Started Today
-            </Link>
+            <GetStartedButton label="Create an Account" className="primary-button text-base md:text-lg py-3 px-6 md:px-8" />
           </div>
         </section>
       </main>
